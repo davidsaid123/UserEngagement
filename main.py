@@ -11,11 +11,11 @@ def format_report(averages: DataFrame) -> str:
     """Build the report table."""
     lines = [
         "Average Duration Per Page:",
-        f"| {'page':<12} | {'avg_duration_sec':<18} |",
+        "| page | avg_duration_sec |",
         "-" * 40,
     ]
     lines += [
-        f"| {row['page']:<12} | {row['avg_duration_sec']:<18} |"
+        f"| {row['page']} | {row['avg_duration_sec']} |"
         for row in averages.collect()
     ]
     lines += ["-" * 39, "-" * 39]
@@ -35,7 +35,10 @@ def main() -> None:
 
     top = analyzer.most_engaging_page(averages)
     if top:
-        print(f"Most engaging page: {top[0]} (average duration: {top[1]} seconds)")
+        print(
+            f"Most engaging page: {top[0]} "
+            f"(average duration: {top[1]} seconds)"
+        )
 
     spark.stop()
 

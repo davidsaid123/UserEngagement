@@ -36,7 +36,7 @@ class Analyzer:
 
     @staticmethod
     def clean(records: DataFrame) -> DataFrame:
-        """Remove invalid rows, normalize page names, and label missing pages."""
+        """Filter bad rows, normalize page names, and label missing ones."""
         cleaned = (
             records.filter(F.col("duration_seconds").isNotNull())
             .filter(F.col("duration_seconds") >= 0)
