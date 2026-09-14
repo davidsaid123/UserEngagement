@@ -1,0 +1,7 @@
+user_id,timestamp,page,duration_seconds
+1,2022-01-01 12:00:00,home,30
+2,2022-01-01 12:05:00,dashboard,45
+3,2022-01-01 12:10:00,profile,60
+1,2022-01-01 12:15:00,home,20
+2,2022-01-01 12:20:00,profile,30
+3,2022-01-01 12:25:00,dashboard,40
