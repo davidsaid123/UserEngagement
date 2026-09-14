@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession
 
 from analyzer import Analyzer
 
-CSV_PATH = "sample_data.csv"
+CSV_PATH = "user_engagement.csv"
 
 
 @pytest.fixture(scope="session")
