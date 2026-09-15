@@ -3,18 +3,9 @@
 from datetime import datetime
 
 import pytest
-from pyspark.sql import Row, SparkSession
+from pyspark.sql import Row
 
 from analyzer import SCHEMA, Analyzer
-
-
-@pytest.fixture(scope="session")
-def spark():
-    """Start Spark session for the tests."""
-    session = SparkSession.builder.master("local[1]").getOrCreate()
-    session.sparkContext.setLogLevel("ERROR")
-    yield session
-    session.stop()
 
 
 def make_df(spark, rows):

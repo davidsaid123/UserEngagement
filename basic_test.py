@@ -1,20 +1,10 @@
 """Tests using sample data."""
 
 import pytest
-from pyspark.sql import SparkSession
 
 from analyzer import Analyzer
 
 CSV_PATH = "user_engagement.csv"
-
-
-@pytest.fixture(scope="session")
-def spark():
-    """Start Spark session for the tests."""
-    session = SparkSession.builder.master("local[1]").getOrCreate()
-    session.sparkContext.setLogLevel("ERROR")
-    yield session
-    session.stop()
 
 
 @pytest.fixture(scope="session")
